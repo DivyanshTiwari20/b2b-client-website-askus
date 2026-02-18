@@ -43,26 +43,27 @@ const Services: React.FC = () => {
           {/* Left Column: Heading */}
           <div className="lg:col-span-1">
             <div className="relative lg:sticky lg:top-32">
-              <div className="flex items-center gap-3 mb-6 md:mb-8">
-                <Zap size={20} style={{ color: '#00E38C' }} />
-                <span style={{ color: '#00E38C' }} className="font-mono text-xs md:text-sm tracking-widest uppercase">Why Choose Us</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight" style={{ color: '#111827' }}>
-                Accelerate <span style={{ color: '#00E38C' }}>growth</span> of your sales funnel.
+              {/* <div className="flex items-center gap-3 mb-6 md:mb-8">
+                <Zap size={24} style={{ color: '#00E38C' }} />
+                <span style={{ color: '#00E38C' }} className="font-mono text-sm md:text-base tracking-widest uppercase font-semibold">Why Choose Us</span>
+              </div> */}
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold mb-6 md:mb-8 leading-tight" style={{ color: '#111827', letterSpacing: '-0.5px' }}>
+                Accelerate <span style={{ color: '#00E38C' }}>growth</span> of your sales.
               </h2>
               <p className="leading-relaxed text-base md:text-lg max-w-sm mb-8 md:mb-10" style={{ color: '#6B7280' }}>
                 D2C Digital helps brands save time, cut costs, and scale profitably with data-driven performance marketing.
               </p>
+
+              {/* <div className="flex justify-center w-full px-4"> */}
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-base font-bold border-b-2 pb-1 transition-colors"
-                style={{ color: '#00E38C', borderColor: '#00E38C' }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#111827'; e.currentTarget.style.borderColor = '#111827'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = '#00E38C'; e.currentTarget.style.borderColor = '#00E38C'; }}
+                className="bg-primary text-black px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all text-lg md:text-xl tracking-wide"
               >
-                Book a free strategy call
+                Book Your FREE Call Now
               </button>
+              {/* </div> */}
             </div>
+
           </div>
 
           {/* Right Column: Grid */}
@@ -125,7 +126,7 @@ const Services: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

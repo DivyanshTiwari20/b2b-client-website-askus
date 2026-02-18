@@ -4,7 +4,7 @@ import { ArrowRight, ChevronRight, BarChart3, Target, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center pt-12 pb-0 md:pt-16 md:pb-0 overflow-hidden">
+    <section id="home" className="relative flex flex-col items-center justify-center pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden">
 
       <div className="max-w-[88rem] mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
 
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-primary text-black px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all text-lg md:text-xl tracking-wide"
             >
-              Book Your FREE Call Now
+              Book Your <span className="text-white shadow-[0_0_12px_#00E38C]">FREE</span> Call Now
             </button>
           </div>
           <div className="relative w-full max-w-5xl mx-auto mt-12 mb-0 md:mt-16 md:mb-0">
