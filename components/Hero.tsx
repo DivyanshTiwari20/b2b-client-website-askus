@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, BarChart3, Target, Zap } from 'lucide-react';
+import CTAButton from './CTAButton';
 
 const stagger = {
   hidden: {},
@@ -63,12 +64,12 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div variants={fadeUp} className="flex justify-center w-full px-4">
-            <button
+            <CTAButton
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary text-black px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all duration-300 text-lg md:text-xl tracking-wide hover:-translate-y-0.5 hover:brightness-110"
+              className="px-10 py-4 text-lg md:text-xl tracking-wide"
             >
-              Book Your <span className="text-white">FREE</span> Call Now
-            </button>
+              Book Your <span className="text-white font-extrabold">FREE</span> Call Now
+            </CTAButton>
           </motion.div>
 
           <motion.div
