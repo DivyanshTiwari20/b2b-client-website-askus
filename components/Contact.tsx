@@ -36,10 +36,10 @@ const Contact: React.FC = () => {
       <div className="max-w-4xl mx-auto px-6">
 
         <div className="text-center mb-16 md:mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white mb-6 md:mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold mb-6 md:mb-8" style={{ color: '#F5F7FA', letterSpacing: '-0.5px' }}>
             Let’s reinvent your business.
           </h2>
-          <p className="text-lg md:text-xl text-zinc-400">
+          <p className="text-lg md:text-xl" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>
             Ready to see 5x ROAS? Book your free strategy call today.
           </p>
         </div>

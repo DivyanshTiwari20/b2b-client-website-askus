@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <div
-          className="text-xl md:text-2xl font-display font-bold tracking-tight text-white flex items-center gap-2 cursor-pointer z-50 relative"
+          className="text-xl md:text-2xl font-display font-extrabold tracking-tight flex items-center gap-2 cursor-pointer z-50 relative" style={{ color: '#F5F7FA' }}
           onClick={() => scrollToSection('home')}
         >
           D2C<span className="text-primary text-glow">.</span>
@@ -48,9 +48,9 @@ const Navbar: React.FC = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-2">
           <div className="flex items-center bg-white/5 rounded-full px-6 py-2 border border-white/5 mr-6 backdrop-blur-sm">
-            <button onClick={() => scrollToSection('services')} className="px-5 py-1 text-base font-medium text-zinc-400 hover:text-primary transition-colors">Services</button>
-            <button onClick={() => scrollToSection('about')} className="px-5 py-1 text-base font-medium text-zinc-400 hover:text-primary transition-colors">About</button>
-            <button onClick={() => scrollToSection('reviews')} className="px-5 py-1 text-base font-medium text-zinc-400 hover:text-primary transition-colors">Reviews</button>
+            <button onClick={() => scrollToSection('services')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>Services</button>
+            <button onClick={() => scrollToSection('about')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>About</button>
+            <button onClick={() => scrollToSection('reviews')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors" style={{ color: 'rgba(255,255,255,0.65)' }}>Reviews</button>
           </div>
 
           <button

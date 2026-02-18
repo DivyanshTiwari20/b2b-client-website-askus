@@ -81,10 +81,10 @@ const DashboardShowcase: React.FC = () => {
                         </span>
                         OUR TRACK RECORD
                     </motion.div>
-                    <h2 className="text-4xl md:text-5xl font-display font-medium text-white mb-6">
+                    <h2 className="text-4xl md:text-5xl font-display font-extrabold mb-6" style={{ color: '#F5F7FA', letterSpacing: '-0.5px' }}>
                         Proven <span className="text-primary italic">Success</span> Across Platforms
                     </h2>
-                    <p className="text-zinc-400 max-w-2xl mx-auto font-light">
+                    <p className="max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>
                         Real dashboards, real results. We let the numbers speak for themselves.
                         From Meta and Google to Shopify analytics, see how we scale brands.
                     </p>
@@ -143,7 +143,7 @@ const DashboardShowcase: React.FC = () => {
                                         <span className="text-[10px] uppercase tracking-wider text-primary/70 font-mono">
                                             {item.category.replace('-', ' ')}
                                         </span>
-                                        <h4 className="text-white text-sm font-medium mt-1">{item.title}</h4>
+                                        <h4 className="text-sm font-semibold mt-1" style={{ color: '#F5F7FA' }}>{item.title}</h4>
                                     </div>
                                     <ExternalLink size={16} className="text-zinc-600 group-hover:text-primary transition-colors" />
                                 </div>

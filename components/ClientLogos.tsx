@@ -12,7 +12,7 @@ const ClientLogos: React.FC = () => {
                     transition={{ duration: 0.8 }}
                     className="flex flex-col items-center"
                 >
-                    <p className="text-zinc-500 font-mono text-sm uppercase tracking-[0.2em] mb-12">
+                    <p className="font-mono text-sm uppercase tracking-[0.2em] mb-12" style={{ color: 'rgba(255,255,255,0.65)' }}>
                         Trusted by Industry Leaders
                     </p>
 

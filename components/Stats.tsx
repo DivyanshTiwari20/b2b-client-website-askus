@@ -15,7 +15,7 @@ const Stats: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 md:divide-x divide-white/5">
           {stats.map((stat, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -23,10 +23,10 @@ const Stats: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="px-2 md:px-8 text-center md:text-left"
             >
-              <div className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-2 group-hover:text-primary transition-colors">
+              <div className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold mb-2 group-hover:text-primary transition-colors" style={{ color: '#F5F7FA' }}>
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <div className="text-xs sm:text-sm md:text-base text-zinc-500 font-mono uppercase tracking-widest">
+              <div className="text-xs sm:text-sm md:text-base font-mono uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.65)' }}>
                 {stat.label}
               </div>
             </motion.div>
