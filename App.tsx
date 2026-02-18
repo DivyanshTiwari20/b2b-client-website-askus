@@ -25,7 +25,7 @@ const App: React.FC = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-900 rounded-full opacity-20 blur-[120px]"></div>
       </div>
 
-      <Navbar />
+      {/* <Navbar /> */}
       <main className="relative z-10">
         <Hero />
         <ReviewsMarquee />

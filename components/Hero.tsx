@@ -4,9 +4,9 @@ import { ArrowRight, ChevronRight, BarChart3, Target, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-28 pb-20 md:pt-32 md:pb-24 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden">
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
+      <div className="max-w-[88rem] mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -14,21 +14,33 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs md:text-sm font-mono mb-8 md:mb-10 uppercase tracking-widest">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            Performance Marketing Engine
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-lg border border-primary/20 bg-primary/5 text-primary text-xs md:text-xl font-mono font-bold mb-8 md:mb-10 uppercase tracking-widest">
+            {/* <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span> */}
+            We are Performance Marketing Engine
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] md:leading-[1.15] mb-6 md:mb-8 text-white max-w-6xl mx-auto">
+            Empower your brand with <span className="text-primary">Data-Driven Ads</span> that transform your marketing <span className="text-zinc-500">strategy</span> into <span className="text-primary">measurable scale !</span>
+          </h1>
+          <p className="text-base md:text-lg text-zinc-400 max-w-5xl mx-auto mb-8 md:mb-10 leading-relaxed">
+            We leverages real-time data to optimize every rupee of your ad spend for maximum ROI!
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mb-10 md:mb-12">
+            {['Better Ads', "Cheaper CPA's", 'High ROAS'].map((item) => (
+              <div key={item} className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/15 bg-white/5 text-white text-sm md:text-base font-semibold">
+                <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                {item}
+              </div>
+            ))}
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-medium tracking-tight leading-[1.1] md:leading-[1.05] mb-8 md:mb-10 text-white max-w-4xl mx-auto">
-            Use <span className="text-primary">Data-Driven Ads</span> to move from <span className="text-zinc-500">strategy</span> to <span className="text-primary">scale</span>
-          </h1>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4">
+          <div className="flex justify-center w-full px-4">
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group flex items-center justify-center gap-3 bg-primary text-black px-8 py-4 md:px-10 md:py-5 rounded-xl font-bold hover:bg-primary-dark transition-all text-base md:text-lg w-full sm:w-auto"
+              className="bg-primary text-white px-6 py-3 rounded-lg font-extrabold hover:bg-primary-dark transition-all text-xl md:text-2xl tracking-wide border-2 border-white"
+              style={{ boxShadow: '1px 3px 0 rgba(255, 255, 255, 1)' }}
             >
-              Book a demo
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Book Your FREE Call Now
             </button>
           </div>
           <div className="relative w-full max-w-5xl mx-auto mt-12 mb-16 md:mt-16 md:mb-24">
@@ -50,13 +62,13 @@ const Hero: React.FC = () => {
                 {/* <img src="./Bathkart.avif" alt="" srcset="" /> */}
                 {/* Connector Line Desktop */}
                 <div className="hidden md:block h-px w-24 bg-gradient-to-r from-white/10 via-primary/50 to-white/10 relative">
-                  <div className="absolute right-0 -top-1 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_12px_#00E599]"></div>
+                  <div className="absolute right-0 -top-1 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_12px_#00E38C]"></div>
                 </div>
 
                 {/* Step 2 (Highlighted) */}
                 <div className="flex flex-col items-center gap-4 md:gap-6 relative mt-4 md:mt-0">
                   <div className="absolute -inset-6 bg-primary/10 blur-xl rounded-full"></div>
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-primary bg-surface flex items-center justify-center shadow-[0_0_40px_rgba(0,229,153,0.15)] z-10 relative">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-primary bg-surface flex items-center justify-center shadow-[0_0_40px_rgba(0,227,140,0.15)] z-10 relative">
                     <Zap className="text-primary fill-primary/20" size={32} />
                   </div>
                   <div className="text-lg md:text-xl font-bold font-display text-white">2. Execution</div>

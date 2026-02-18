@@ -34,17 +34,17 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 md:py-40 relative">
       <div className="max-w-4xl mx-auto px-6">
-        
+
         <div className="text-center mb-16 md:mb-20">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white mb-6 md:mb-8">
-              Let’s reinvent your business.
-            </h2>
-            <p className="text-lg md:text-xl text-zinc-400">
-              Ready to see 5x ROAS? Book your free strategy call today.
-            </p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-medium text-white mb-6 md:mb-8">
+            Let’s reinvent your business.
+          </h2>
+          <p className="text-lg md:text-xl text-zinc-400">
+            Ready to see 5x ROAS? Book your free strategy call today.
+          </p>
         </div>
 
-        <motion.form 
+        <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,24 +54,24 @@ const Contact: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-2 md:space-y-3">
               <label className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-wide">First Name</label>
-              <input 
-                required 
+              <input
+                required
                 name="firstName"
                 value={formState.firstName}
                 onChange={handleChange}
-                type="text" 
+                type="text"
                 className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
                 placeholder="John"
               />
             </div>
             <div className="space-y-2 md:space-y-3">
               <label className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-wide">Last Name</label>
-              <input 
-                required 
+              <input
+                required
                 name="lastName"
                 value={formState.lastName}
                 onChange={handleChange}
-                type="text" 
+                type="text"
                 className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
                 placeholder="Doe"
               />
@@ -81,24 +81,24 @@ const Contact: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="space-y-2 md:space-y-3">
               <label className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-wide">Phone</label>
-              <input 
-                required 
+              <input
+                required
                 name="phone"
                 value={formState.phone}
                 onChange={handleChange}
-                type="tel" 
+                type="tel"
                 className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
             <div className="space-y-2 md:space-y-3">
               <label className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-wide">Email</label>
-              <input 
-                required 
+              <input
+                required
                 name="email"
                 value={formState.email}
                 onChange={handleChange}
-                type="email" 
+                type="email"
                 className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
                 placeholder="john@example.com"
               />
@@ -107,12 +107,12 @@ const Contact: React.FC = () => {
 
           <div className="space-y-2 md:space-y-3">
             <label className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-wide">Website URL</label>
-            <input 
-              required 
+            <input
+              required
               name="website"
               value={formState.website}
               onChange={handleChange}
-              type="url" 
+              type="url"
               className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
               placeholder="https://yourbrand.com"
             />
@@ -120,20 +120,20 @@ const Contact: React.FC = () => {
 
           <div className="space-y-2 md:space-y-3">
             <label className="text-xs md:text-sm font-mono text-zinc-500 uppercase tracking-wide">Message</label>
-            <textarea 
+            <textarea
               name="message"
               value={formState.message}
               onChange={handleChange}
-              rows={5} 
+              rows={5}
               className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
               placeholder="Tell us about your goals..."
             ></textarea>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-primary-dark text-black font-bold text-lg md:text-xl py-4 md:py-5 rounded-xl transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(0,229,153,0.3)] hover:shadow-[0_0_30px_rgba(0,229,153,0.5)] mt-4"
+            className="w-full bg-primary hover:bg-primary-dark text-black font-bold text-lg md:text-xl py-4 md:py-5 rounded-xl transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(0,227,140,0.3)] hover:shadow-[0_0_30px_rgba(0,227,140,0.5)] mt-4"
           >
             {isSubmitting ? (
               <>

@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
 
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-primary hover:bg-primary-dark text-black px-8 py-3 rounded-full font-bold text-base transition-all shadow-[0_0_15px_rgba(0,229,153,0.3)] hover:shadow-[0_0_25px_rgba(0,229,153,0.5)]"
+            className="bg-primary hover:bg-primary-dark text-black px-8 py-3 rounded-full font-bold text-base transition-all shadow-[0_0_15px_rgba(0,227,140,0.3)] hover:shadow-[0_0_25px_rgba(0,227,140,0.5)]"
           >
             Book Strategy Call
           </button>
@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
               <button onClick={() => scrollToSection('about')} className="text-2xl font-display font-medium text-zinc-300 hover:text-primary">About</button>
               <button onClick={() => scrollToSection('reviews')} className="text-2xl font-display font-medium text-zinc-300 hover:text-primary">Reviews</button>
               <div className="h-px bg-white/10 w-full my-4"></div>
-              <button onClick={() => scrollToSection('contact')} className="text-xl bg-primary text-black font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(0,229,153,0.4)]">
+              <button onClick={() => scrollToSection('contact')} className="text-xl bg-primary text-black font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(0,227,140,0.4)]">
                 Book Strategy Call
               </button>
             </div>
