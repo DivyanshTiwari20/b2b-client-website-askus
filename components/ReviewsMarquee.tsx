@@ -106,22 +106,22 @@ const ReviewCard: React.FC<{ review: Review; index: number; featured?: boolean }
         className="group"
         style={{
             background: '#11161D',
-            border: featured ? '1px solid rgba(0,227,140,0.3)' : '1px solid #1F2937',
+            border: '1px solid #00E38C',
             borderRadius: '16px',
             padding: '32px',
-            boxShadow: featured ? '0 14px 36px rgba(0,0,0,0.45)' : '0 10px 30px rgba(0,0,0,0.35)',
+            boxShadow: featured ? '0 0 60px rgba(0,227,140,0.4), 0 0 20px rgba(0,227,140,0.2)' : '0 0 50px rgba(0,227,140,0.3), 0 0 15px rgba(0,227,140,0.15)',
             transition: 'transform 0.3s ease, box-shadow 0.3s ease',
             transform: featured ? 'scale(1.05)' : 'scale(1)',
         }}
         onMouseEnter={(e) => {
             const el = e.currentTarget;
             el.style.transform = featured ? 'scale(1.05) translateY(-6px)' : 'translateY(-6px)';
-            el.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
+            el.style.boxShadow = '0 0 70px rgba(0,227,140,0.45), 0 0 25px rgba(0,227,140,0.25)';
         }}
         onMouseLeave={(e) => {
             const el = e.currentTarget;
             el.style.transform = featured ? 'scale(1.05)' : 'scale(1)';
-            el.style.boxShadow = featured ? '0 14px 36px rgba(0,0,0,0.45)' : '0 10px 30px rgba(0,0,0,0.35)';
+            el.style.boxShadow = featured ? '0 0 60px rgba(0,227,140,0.4), 0 0 20px rgba(0,227,140,0.2)' : '0 0 50px rgba(0,227,140,0.3), 0 0 15px rgba(0,227,140,0.15)';
         }}
     >
         {/* Stars */}
@@ -200,7 +200,7 @@ const ReviewCard: React.FC<{ review: Review; index: number; featured?: boolean }
 
 const ReviewsMarquee: React.FC = () => {
     return (
-        <section id="reviews" style={{ paddingTop: '80px', paddingBottom: '140px', background: '#0B0F14' }} className="relative">
+        <section id="reviews" style={{ paddingTop: '80px', paddingBottom: '140px', background: '#ffffff', color: '#111827' }} className="relative">
 
             <div style={{ maxWidth: '1200px' }} className="mx-auto px-6">
 
@@ -213,12 +213,12 @@ const ReviewsMarquee: React.FC = () => {
                     className="text-center"
                 >
                     <h2
-                        className="font-display text-white"
-                        style={{ fontSize: '42px', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '32px' }}
+                        className="font-display"
+                        style={{ fontSize: '52px', fontWeight: 800, letterSpacing: '-0.03em', lineHeight: 1.15, marginBottom: '24px', color: '#111827' }}
                     >
                         Real Results. Real Brands. <span style={{ color: '#00E38C' }}>Real Growth.</span>
                     </h2>
-                    <p style={{ fontSize: '18px', color: '#9CA3AF', lineHeight: 1.6 }}>
+                    <p style={{ fontSize: '20px', fontWeight: 500, color: '#6B7280', lineHeight: 1.6 }}>
                         We don't just run ads. We scale brands profitably.
                     </p>
                 </motion.div>
@@ -234,10 +234,10 @@ const ReviewsMarquee: React.FC = () => {
                 >
                     {stats.map((stat, i) => (
                         <div key={i} className="text-center">
-                            <div style={{ fontSize: '20px', fontWeight: 600, color: '#E5E7EB' }}>
+                            <div style={{ fontSize: '28px', fontWeight: 700, color: '#111827' }}>
                                 {stat.value}
                             </div>
-                            <div style={{ fontSize: '14px', color: '#9CA3AF', marginTop: '4px' }}>
+                            <div style={{ fontSize: '14px', color: '#6B7280', marginTop: '4px' }}>
                                 {stat.label}
                             </div>
                         </div>

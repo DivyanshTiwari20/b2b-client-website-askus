@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MonitorPlay, BarChart2, Lightbulb, TrendingUp, Users, Target, Zap } from 'lucide-react';
+import { MonitorPlay, Lightbulb, TrendingUp, Target, Zap } from 'lucide-react';
 
 const services = [
   {
@@ -27,7 +27,7 @@ const services = [
   {
     title: "Growth Scaling",
     subtitle: "Systematic Expansion",
-    description: "Aligning neighboring subsystems through simulation to achieve >90% system performance.",
+    description: "Systematic scaling through data-backed iteration loops that compound revenue month over month.",
     icon: <TrendingUp size={32} />,
     stat: "Scale Fast"
   }
@@ -35,7 +35,7 @@ const services = [
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 md:py-32 relative">
+    <section id="services" className="relative" style={{ paddingTop: '120px', paddingBottom: '120px', background: '#ffffff', color: '#111827' }}>
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -44,16 +44,22 @@ const Services: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="relative lg:sticky lg:top-32">
               <div className="flex items-center gap-3 mb-6 md:mb-8">
-                <Zap size={20} className="text-primary" />
-                <span className="text-primary font-mono text-xs md:text-sm tracking-widest uppercase">Why Choose Us</span>
+                <Zap size={20} style={{ color: '#00E38C' }} />
+                <span style={{ color: '#00E38C' }} className="font-mono text-xs md:text-sm tracking-widest uppercase">Why Choose Us</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-medium text-white mb-6 md:mb-8 leading-tight">
-                Accelerate <span className="text-primary">electrification</span> of your sales funnel.
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight" style={{ color: '#111827' }}>
+                Accelerate <span style={{ color: '#00E38C' }}>growth</span> of your sales funnel.
               </h2>
-              <p className="text-zinc-400 leading-relaxed text-base md:text-lg max-w-sm mb-8 md:mb-10">
-                D2C Digital helps engineering teams save time, cut costs, and optimize power systems with physics-based tools and data-driven optimization.
+              <p className="leading-relaxed text-base md:text-lg max-w-sm mb-8 md:mb-10" style={{ color: '#6B7280' }}>
+                D2C Digital helps brands save time, cut costs, and scale profitably with data-driven performance marketing.
               </p>
-              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="text-primary text-base font-bold border-b-2 border-primary pb-1 hover:text-white hover:border-white transition-colors">
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-base font-bold border-b-2 pb-1 transition-colors"
+                style={{ color: '#00E38C', borderColor: '#00E38C' }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#111827'; e.currentTarget.style.borderColor = '#111827'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#00E38C'; e.currentTarget.style.borderColor = '#00E38C'; }}
+              >
                 Book a free strategy call
               </button>
             </div>
@@ -69,25 +75,48 @@ const Services: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-surface border border-white/5 p-8 md:p-10 rounded-2xl hover:border-primary/30 transition-all group relative overflow-hidden"
+                  className="group relative overflow-hidden"
+                  style={{
+                    background: '#11161D',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: '16px',
+                    padding: '36px',
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget;
+                    el.style.transform = 'translateY(-4px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget;
+                    el.style.transform = 'translateY(0)';
+                  }}
                 >
-                  <div className="absolute top-0 right-0 p-6 md:p-8 opacity-20 group-hover:opacity-100 transition-opacity">
-                    <span className="font-mono text-primary text-xs md:text-sm border border-primary/30 px-3 py-1.5 rounded bg-primary/5">
-                      {service.stat}
-                    </span>
-                  </div>
+                  {/* Inner neon glow — radial gradient from bottom-left corner */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle at 0% 100%, rgba(0,227,140,0.22) 0%, rgba(0,227,140,0.08) 35%, transparent 65%)',
+                      borderRadius: '16px',
+                    }}
+                  />
 
-                  <div className="mb-8 md:mb-10 text-zinc-500 group-hover:text-primary transition-colors">
-                    {service.icon}
-                  </div>
-
-                  <h3 className="text-xl md:text-2xl font-display font-medium text-white mb-3">
-                    {service.title}
+                  {/* Title — bold, green */}
+                  <h3
+                    className="font-display relative z-10"
+                    style={{ fontSize: '22px', fontWeight: 700, color: '#00E38C', marginBottom: '16px', lineHeight: 1.3 }}
+                  >
+                    {service.title}:
                   </h3>
-                  <h4 className="text-xs md:text-sm font-mono text-zinc-500 mb-6 uppercase tracking-wider">
-                    {service.subtitle}
-                  </h4>
-                  <p className="text-zinc-400 text-sm md:text-base leading-relaxed border-t border-white/5 pt-6">
+
+                  {/* Separator line */}
+                  <div
+                    className="relative z-10"
+                    style={{ width: '100%', height: '1px', background: 'rgba(255,255,255,0.1)', marginBottom: '20px' }}
+                  />
+
+                  {/* Description — white text */}
+                  <p className="relative z-10" style={{ fontSize: '16px', lineHeight: 1.7, color: '#E5E7EB' }}>
                     {service.description}
                   </p>
                 </motion.div>
