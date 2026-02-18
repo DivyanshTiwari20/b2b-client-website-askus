@@ -21,9 +21,10 @@ const Counter: React.FC<CounterProps> = ({
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
   const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 70,
-    mass: 1
+    damping: 40,
+    stiffness: 50,
+    mass: 1,
+    restDelta: 0.001
   });
   const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
 
@@ -36,7 +37,6 @@ const Counter: React.FC<CounterProps> = ({
   useEffect(() => {
     return springValue.on("change", (latest) => {
       if (ref.current) {
-        // Format with commas if needed, though mostly using simple numbers here
         ref.current.textContent = `${prefix}${latest.toFixed(decimals)}${suffix}`;
       }
     });

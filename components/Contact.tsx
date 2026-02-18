@@ -23,7 +23,6 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       alert("Thanks! We'll be in touch.");
@@ -35,20 +34,27 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 md:py-40 relative">
       <div className="max-w-4xl mx-auto px-6">
 
-        <div className="text-center mb-16 md:mb-20">
+        <motion.div
+          className="text-center mb-16 md:mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold mb-6 md:mb-8" style={{ color: '#F5F7FA', letterSpacing: '-0.5px' }}>
-            Let’s reinvent your business.
+            Let's reinvent your business.
           </h2>
           <p className="text-lg md:text-xl" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>
             Ready to see 5x ROAS? Book your free strategy call today.
           </p>
-        </div>
+        </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
           className="space-y-6 md:space-y-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -60,7 +66,7 @@ const Contact: React.FC = () => {
                 value={formState.firstName}
                 onChange={handleChange}
                 type="text"
-                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
+                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors duration-300 placeholder:text-zinc-700"
                 placeholder="John"
               />
             </div>
@@ -72,7 +78,7 @@ const Contact: React.FC = () => {
                 value={formState.lastName}
                 onChange={handleChange}
                 type="text"
-                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
+                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors duration-300 placeholder:text-zinc-700"
                 placeholder="Doe"
               />
             </div>
@@ -87,7 +93,7 @@ const Contact: React.FC = () => {
                 value={formState.phone}
                 onChange={handleChange}
                 type="tel"
-                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
+                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors duration-300 placeholder:text-zinc-700"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
@@ -99,7 +105,7 @@ const Contact: React.FC = () => {
                 value={formState.email}
                 onChange={handleChange}
                 type="email"
-                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
+                className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors duration-300 placeholder:text-zinc-700"
                 placeholder="john@example.com"
               />
             </div>
@@ -113,7 +119,7 @@ const Contact: React.FC = () => {
               value={formState.website}
               onChange={handleChange}
               type="url"
-              className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
+              className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors duration-300 placeholder:text-zinc-700"
               placeholder="https://yourbrand.com"
             />
           </div>
@@ -125,7 +131,7 @@ const Contact: React.FC = () => {
               value={formState.message}
               onChange={handleChange}
               rows={5}
-              className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors placeholder:text-zinc-700"
+              className="w-full bg-surface border border-white/10 focus:border-primary rounded-xl px-5 py-4 text-white text-base md:text-lg outline-none transition-colors duration-300 placeholder:text-zinc-700"
               placeholder="Tell us about your goals..."
             ></textarea>
           </div>
@@ -133,7 +139,7 @@ const Contact: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-primary hover:bg-primary-dark text-black font-bold text-lg md:text-xl py-4 md:py-5 rounded-xl transition-all flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(0,227,140,0.3)] hover:shadow-[0_0_30px_rgba(0,227,140,0.5)] mt-4"
+            className="w-full bg-primary hover:bg-primary-dark text-black font-bold text-lg md:text-xl py-4 md:py-5 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(0,227,140,0.3)] hover:shadow-[0_0_30px_rgba(0,227,140,0.5)] hover:-translate-y-0.5 hover:brightness-110 mt-4"
           >
             {isSubmitting ? (
               <>

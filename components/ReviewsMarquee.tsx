@@ -94,33 +94,33 @@ const stats = [
     { value: "3.8x", label: "Avg ROAS" },
 ];
 
-// Featured card = index 1 (center of first row on desktop)
 const FEATURED_INDEX = 1;
 
 const ReviewCard: React.FC<{ review: Review; index: number; featured?: boolean }> = ({ review, index, featured = false }) => (
     <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: index * 0.08 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7, delay: index * 0.1, ease: 'easeOut' }}
         className="group"
         style={{
             background: '#11161D',
-            border: '1px solid #00E38C',
+            border: '1px solid rgba(0,227,140,0.25)',
             borderRadius: '16px',
             padding: '32px',
             boxShadow: featured ? '0 0 60px rgba(0,227,140,0.4), 0 0 20px rgba(0,227,140,0.2)' : '0 0 50px rgba(0,227,140,0.3), 0 0 15px rgba(0,227,140,0.15)',
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-            transform: featured ? 'scale(1.05)' : 'scale(1)',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
         }}
         onMouseEnter={(e) => {
             const el = e.currentTarget;
-            el.style.transform = featured ? 'scale(1.05) translateY(-6px)' : 'translateY(-6px)';
+            el.style.transform = 'translateY(-6px)';
+            el.style.borderColor = 'rgba(0,227,140,0.45)';
             el.style.boxShadow = '0 0 70px rgba(0,227,140,0.45), 0 0 25px rgba(0,227,140,0.25)';
         }}
         onMouseLeave={(e) => {
             const el = e.currentTarget;
-            el.style.transform = featured ? 'scale(1.05)' : 'scale(1)';
+            el.style.transform = 'translateY(0)';
+            el.style.borderColor = 'rgba(0,227,140,0.25)';
             el.style.boxShadow = featured ? '0 0 60px rgba(0,227,140,0.4), 0 0 20px rgba(0,227,140,0.2)' : '0 0 50px rgba(0,227,140,0.3), 0 0 15px rgba(0,227,140,0.15)';
         }}
     >
@@ -206,10 +206,10 @@ const ReviewsMarquee: React.FC = () => {
 
                 {/* Heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
                     className="text-center"
                 >
                     <h2
@@ -225,10 +225,10 @@ const ReviewsMarquee: React.FC = () => {
 
                 {/* Trust Bar — Authority Stats */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
                     className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16"
                     style={{ marginTop: '60px', marginBottom: '60px' }}
                 >

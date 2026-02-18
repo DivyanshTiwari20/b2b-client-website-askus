@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import Counter from './Counter';
 
 const About: React.FC = () => {
   return (
@@ -10,9 +9,10 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
 
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <div className="flex items-center gap-3 mb-6 md:mb-8">
               <div className="h-0.5 w-10 bg-primary"></div>
@@ -32,20 +32,29 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
               {['Data-Driven Strategies', 'Impeccable Development', 'Active CRO Efforts', 'SEO Optimization'].map((item, i) => (
-                <div key={i} className="flex items-start gap-4" style={{ color: '#374151' }}>
+                <motion.div
+                  key={i}
+                  className="flex items-start gap-4"
+                  style={{ color: '#374151' }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1, ease: 'easeOut' }}
+                >
                   <div className="mt-1.5 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
                     <Check size={12} className="text-primary" />
                   </div>
                   <span className="text-sm md:text-base">{item}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: 'easeOut' }}
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-xl rounded-3xl overflow-hidden">

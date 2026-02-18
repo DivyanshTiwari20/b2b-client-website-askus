@@ -18,12 +18,9 @@ const categories = [
 ];
 
 const showcaseItems: ShowcaseItem[] = [
-    // Google Ads
     { id: 'g1', category: 'google-ads', title: 'Bathroom Accessories Brand', image: '/dashboard-ss/Google Ads Dashboard SS/Bathroom accesoories brand.jpeg' },
     { id: 'g2', category: 'google-ads', title: 'RC Toys Brand', image: '/dashboard-ss/Google Ads Dashboard SS/RC Toys brand.jpeg' },
     { id: 'g3', category: 'google-ads', title: 'Shapewear Brand', image: '/dashboard-ss/Google Ads Dashboard SS/Shapewear brand.jpeg' },
-
-    // Meta Ads
     { id: 'm1', category: 'meta-ads', title: 'Scale Strategy #1', image: '/dashboard-ss/Meta Ads Dashboard Screenshots/1 (1).png' },
     { id: 'm2', category: 'meta-ads', title: 'Scale Strategy #2', image: '/dashboard-ss/Meta Ads Dashboard Screenshots/1 (2).png' },
     { id: 'm3', category: 'meta-ads', title: 'Scale Strategy #3', image: '/dashboard-ss/Meta Ads Dashboard Screenshots/1 (3).png' },
@@ -33,8 +30,6 @@ const showcaseItems: ShowcaseItem[] = [
     { id: 'm7', category: 'meta-ads', title: 'Testing Framework', image: '/dashboard-ss/Meta Ads Dashboard Screenshots/Ads Manager - Manage ads - Campaigns (4).png' },
     { id: 'm8', category: 'meta-ads', title: 'Scaling Phase', image: '/dashboard-ss/Meta Ads Dashboard Screenshots/Ads Manager - Manage ads - Campaigns (5).png' },
     { id: 'm9', category: 'meta-ads', title: 'Performance Dashboard', image: '/dashboard-ss/Meta Ads Dashboard Screenshots/_62  Ads Manager - Manage ads - Campaigns.png' },
-
-    // Shopify
     { id: 's1', category: 'shopify', title: 'CrazyRC.com Analytics', image: '/dashboard-ss/Shopify Dashboard SS/CrazyRC.com · Analytics · Shopify.png' },
     { id: 's2', category: 'shopify', title: 'Ghamand Growth', image: '/dashboard-ss/Shopify Dashboard SS/Ghamand · Analytics · Shopify.png' },
     { id: 's3', category: 'shopify', title: 'Inti Fashions Analytics', image: '/dashboard-ss/Shopify Dashboard SS/Inti Fashions · Analytics · Shopify.png' },
@@ -45,8 +40,6 @@ const showcaseItems: ShowcaseItem[] = [
     { id: 's8', category: 'shopify', title: 'WILDHORN Performance', image: '/dashboard-ss/Shopify Dashboard SS/WILDHORN · Analytics · Shopify.png' },
     { id: 's9', category: 'shopify', title: 'Yaahvi Analytics', image: '/dashboard-ss/Shopify Dashboard SS/Yaahvi · Analytics · Shopify.png' },
     { id: 's10', category: 'shopify', title: 'Bathkart.in Results', image: '/dashboard-ss/Shopify Dashboard SS/bathkart.in · Analytics · Shopify.png' },
-
-    // Reviews
     { id: 'r1', category: 'reviews', title: 'Client Feedback (Google)', image: '/dashboard-ss/Google Reviews SS/D2C Digital Solutions - Google Maps (1).png' },
     { id: 'r2', category: 'reviews', title: 'Customer Satisfaction', image: '/dashboard-ss/Google Reviews SS/D2C Digital Solutions - Google Maps (10).png' },
     { id: 'r3', category: 'reviews', title: 'Partner Review', image: '/dashboard-ss/Google Reviews SS/D2C Digital Solutions - Google Maps (11).png' },
@@ -68,11 +61,14 @@ const DashboardShowcase: React.FC = () => {
     return (
         <section className="py-24 bg-background relative" id="reviews">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                <motion.div
+                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
+                >
+                    <div
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono mb-6"
                     >
                         <span className="relative flex h-2 w-2">
@@ -80,7 +76,7 @@ const DashboardShowcase: React.FC = () => {
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
                         OUR TRACK RECORD
-                    </motion.div>
+                    </div>
                     <h2 className="text-4xl md:text-5xl font-display font-extrabold mb-6" style={{ color: '#F5F7FA', letterSpacing: '-0.5px' }}>
                         Proven <span className="text-primary italic">Success</span> Across Platforms
                     </h2>
@@ -88,10 +84,16 @@ const DashboardShowcase: React.FC = () => {
                         Real dashboards, real results. We let the numbers speak for themselves.
                         From Meta and Google to Shopify analytics, see how we scale brands.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Tabs */}
-                <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+                <motion.div
+                    className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+                >
                     {categories.map((cat) => (
                         <button
                             key={cat.id}
@@ -105,7 +107,7 @@ const DashboardShowcase: React.FC = () => {
                             <span>{cat.title}</span>
                         </button>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Grid */}
                 <motion.div
@@ -117,22 +119,22 @@ const DashboardShowcase: React.FC = () => {
                             <motion.div
                                 key={item.id}
                                 layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                className="group relative bg-surface/40 border border-white/5 rounded-2xl overflow-hidden hover:border-primary/40 transition-colors"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{ duration: 0.5, ease: 'easeOut' }}
+                                className="group relative bg-surface/40 border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-primary/40"
                             >
                                 <div className="aspect-video relative overflow-hidden">
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                                     />
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                                         <button
                                             onClick={() => setSelectedImage(item.image)}
-                                            className="p-3 bg-primary text-black rounded-full hover:scale-110 transition-transform"
+                                            className="p-3 bg-primary text-black rounded-full transition-transform duration-300 hover:-translate-y-0.5"
                                         >
                                             <ZoomIn size={20} />
                                         </button>
@@ -145,7 +147,7 @@ const DashboardShowcase: React.FC = () => {
                                         </span>
                                         <h4 className="text-sm font-semibold mt-1" style={{ color: '#F5F7FA' }}>{item.title}</h4>
                                     </div>
-                                    <ExternalLink size={16} className="text-zinc-600 group-hover:text-primary transition-colors" />
+                                    <ExternalLink size={16} className="text-zinc-600 group-hover:text-primary transition-colors duration-300" />
                                 </div>
                             </motion.div>
                         ))}
@@ -160,22 +162,24 @@ const DashboardShowcase: React.FC = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
                         onClick={() => setSelectedImage(null)}
                         className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-12 bg-black/95 backdrop-blur-md cursor-zoom-out"
                     >
                         <motion.img
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 20 }}
+                            transition={{ duration: 0.4, ease: 'easeOut' }}
                             src={selectedImage}
                             alt="Dashboard Screenshot"
                             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                         />
                         <button
-                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors duration-300"
                             onClick={() => setSelectedImage(null)}
                         >
-                            <Star size={32} className="rotate-45" /> {/* Using Star as a cross replacement for simplicity or just X */}
+                            <Star size={32} className="rotate-45" />
                         </button>
                     </motion.div>
                 )}

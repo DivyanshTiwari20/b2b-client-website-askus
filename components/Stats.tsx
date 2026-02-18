@@ -17,13 +17,13 @@ const Stats: React.FC = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: index * 0.1, duration: 0.7, ease: 'easeOut' }}
               className="px-2 md:px-8 text-center md:text-left"
             >
-              <div className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold mb-2 group-hover:text-primary transition-colors" style={{ color: '#F5F7FA' }}>
+              <div className="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold mb-2 group-hover:text-primary transition-colors duration-300" style={{ color: '#F5F7FA' }}>
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-xs sm:text-sm md:text-base font-mono uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.65)' }}>

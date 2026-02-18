@@ -6,10 +6,10 @@ const ClientLogos: React.FC = () => {
         <section className="py-12 md:py-20 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
                     className="flex flex-col items-center"
                 >
                     <p className="font-mono text-sm uppercase tracking-[0.2em] mb-12" style={{ color: 'rgba(255,255,255,0.65)' }}>

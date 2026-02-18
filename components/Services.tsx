@@ -42,27 +42,27 @@ const Services: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Left Column: Heading */}
           <div className="lg:col-span-1">
-            <div className="relative lg:sticky lg:top-32">
-              {/* <div className="flex items-center gap-3 mb-6 md:mb-8">
-                <Zap size={24} style={{ color: '#00E38C' }} />
-                <span style={{ color: '#00E38C' }} className="font-mono text-sm md:text-base tracking-widest uppercase font-semibold">Why Choose Us</span>
-              </div> */}
+            <motion.div
+              className="relative lg:sticky lg:top-32"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold mb-6 md:mb-8 leading-tight" style={{ color: '#111827', letterSpacing: '-0.5px' }}>
                 Accelerate <span style={{ color: '#00E38C' }}>growth</span> of your sales.
               </h2>
-              <p className="leading-relaxed text-base md:text-lg max-w-sm mb-8 md:mb-10" style={{ color: '#6B7280' }}>
+              <p className="leading-relaxed text-base md:text-lg max-w-sm mb-8 md:mb-10" style={{ color: '#6B7280', lineHeight: 1.6 }}>
                 D2C Digital helps brands save time, cut costs, and scale profitably with data-driven performance marketing.
               </p>
 
-              {/* <div className="flex justify-center w-full px-4"> */}
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-primary text-black px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all text-lg md:text-xl tracking-wide"
+                className="bg-primary text-black px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all duration-300 text-lg md:text-xl tracking-wide hover:-translate-y-0.5 hover:brightness-110"
               >
                 Book Your FREE Call Now
               </button>
-              {/* </div> */}
-            </div>
+            </motion.div>
 
           </div>
 
@@ -72,25 +72,29 @@ const Services: React.FC = () => {
               {services.map((service, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ delay: index * 0.1, duration: 0.7, ease: 'easeOut' }}
                   className="group relative overflow-hidden"
                   style={{
                     background: '#11161D',
                     border: '1px solid rgba(255,255,255,0.08)',
                     borderRadius: '16px',
                     padding: '36px',
-                    transition: 'all 0.3s ease',
+                    transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget;
-                    el.style.transform = 'translateY(-4px)';
+                    el.style.transform = 'translateY(-6px)';
+                    el.style.borderColor = 'rgba(255,255,255,0.15)';
+                    el.style.boxShadow = '0 12px 40px rgba(0,0,0,0.15)';
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget;
                     el.style.transform = 'translateY(0)';
+                    el.style.borderColor = 'rgba(255,255,255,0.08)';
+                    el.style.boxShadow = 'none';
                   }}
                 >
                   {/* Inner neon glow — radial gradient from bottom-left corner */}
@@ -126,7 +130,7 @@ const Services: React.FC = () => {
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 
