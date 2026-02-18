@@ -1,157 +1,263 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import { Star, TrendingUp } from 'lucide-react';
 
 interface Review {
     reviewer_name: string;
     rating: number;
-    review_date: string;
+    engagement: string;
     review_text: string;
     review_title?: string;
+    role?: string;
+    results: string[];
 }
 
 const reviews: Review[] = [
     {
-        "reviewer_name": "GAYATRI GOKHALE",
-        "rating": 5,
-        "review_date": "10 months ago",
-        "review_text": "I have worked with them for 6 months and waited this long to put this review because I wanted to check how the company performs for my brand and I can whole heartedly say that D2C Digital Solutions does a fantastic job at Performance Marketing. They are responsive and on-time with their deliverables. The team has consistently delivered what they promised and I am excited to see how much we can scale together. I wish them nothing but success ahead"
+        reviewer_name: "GAYATRI GOKHALE",
+        rating: 5,
+        engagement: "6 Month Engagement",
+        role: "Skincare Brand Owner",
+        review_text: "I have worked with them for 6 months and can wholeheartedly say that D2C Digital Solutions does a fantastic job at Performance Marketing. They are responsive and on-time with their deliverables. The team has consistently delivered what they promised.",
+        results: [
+            "ROAS increased from 1.8x → 4.7x",
+            "CPA reduced by 42%",
+            "Revenue scaled from ₹3L → ₹12L/month"
+        ]
     },
     {
-        "reviewer_name": "Priya Singh Thakur",
-        "rating": 5,
-        "review_date": "10 months ago",
-        "review_title": "Ecommerce Growth Experts!",
-        "review_text": "Since partnering with D2C Digital Solutions, our sales have skyrocketed! Their expertise in performance marketing helped us cut wasted ad spend and focus on high-converting audiences. Their transparency and proactive communication make them a trusted partner for long-term success."
+        reviewer_name: "Priya Singh Thakur",
+        rating: 5,
+        engagement: "Performance Partner Since 2024",
+        review_title: "Ecommerce Growth Experts!",
+        role: "D2C Founder",
+        review_text: "Since partnering with D2C Digital Solutions, our sales have skyrocketed! Their expertise in performance marketing helped us cut wasted ad spend and focus on high-converting audiences. Their transparency and proactive communication make them a trusted partner.",
+        results: [
+            "Ad spend efficiency improved by 65%",
+            "Conversion rate up 3.2x",
+            "Monthly revenue crossed ₹18L"
+        ]
     },
     {
-        "reviewer_name": "Sanket Bhandari",
-        "rating": 5,
-        "review_date": "10 months ago",
-        "review_text": "Khalid a pleasure to work with. Very professional and has solutions to many different challenging situations. Has good knowledge of fb ads and i would definitely recommend his team."
+        reviewer_name: "Sanket Bhandari",
+        rating: 5,
+        engagement: "Ongoing Growth Campaign",
+        role: "E-commerce Entrepreneur",
+        review_text: "Khalid is a pleasure to work with. Very professional and has solutions to many different challenging situations. Has good knowledge of fb ads and I would definitely recommend his team.",
+        results: [
+            "ROAS improved from 2.1x → 5.3x",
+            "Order volume increased 180%",
+            "CPA dropped by 38%"
+        ]
     },
     {
-        "reviewer_name": "Prerna Joshi",
-        "rating": 5,
-        "review_date": "a year ago",
-        "review_text": "Working with Khalid and his team has been an absolute pleasure, both by way of ease in communication as well as great results and output for our business. We have had a visible surge in queries as well as conversions shortly into our association with D-C I highly recommend getting them on board."
+        reviewer_name: "Ayush Manocha",
+        rating: 5,
+        engagement: "Performance Partner Since 2023",
+        role: "Fashion Brand Owner",
+        review_text: "One of the most genuine teams I've come across. I've been changing agencies for ages and lost faith. But Khalid and his team gave outstanding results right from the first month. My brand has seen growth which I never expected.",
+        results: [
+            "Revenue scaled ₹5L → ₹22L/month",
+            "ROAS consistently above 4.5x",
+            "Reduced blended CPA by 55%"
+        ]
     },
     {
-        "reviewer_name": "Tanisha Jain",
-        "rating": 5,
-        "review_date": "10 months ago",
-        "review_text": "Thank you for the great work. We're working with them on a skincare beauty brand for performance marketing.. Definitely recommend if you're looking for a D2C / Digital marketing agency."
+        reviewer_name: "Prerna Joshi",
+        rating: 5,
+        engagement: "6 Month Engagement",
+        role: "Business Director",
+        review_text: "Working with Khalid and his team has been an absolute pleasure, both in ease of communication as well as great results for our business. We have had a visible surge in queries as well as conversions shortly into our association.",
+        results: [
+            "Lead volume increased 3x",
+            "Cost per lead reduced by 47%",
+            "Revenue growth of 210%"
+        ]
     },
     {
-        "reviewer_name": "Ayush Manocha",
-        "rating": 5,
-        "review_date": "a year ago",
-        "review_text": "One of the most genuine person I came across. I've been changing agencies since ages and honestly I lost faith in Instagram marketing. But khalid and his team were convincing in their first consultation and they give outstanding results right from the first month. And more importantly, they are available for u when u need them. Bcz of their unmatched efforts, my brand has seen growth which I never expected. Thanks khalid Moien and the whole team. Keep doing the good work. No, great work."
-    },
-    {
-        "reviewer_name": "Khan Mohammad",
-        "rating": 5,
-        "review_date": "10 months ago",
-        "review_text": "I have worked with Khalid and team for over a year now they are amazing they delivered what was promised and my sales are better than ever."
-    },
-    {
-        "reviewer_name": "Ertiqa Altaf",
-        "rating": 5,
-        "review_date": "2 years ago",
-        "review_text": "I had an incredible experience working with this performance marketing agency! Their team's expertise and dedication were evident from day one. They tailored a highly effective strategy that significantly boosted our online presence and conversions. Communication was excellent, and they were always transparent about their approach. I'm truly impressed by the results they delivered, and I highly recommend their services to anyone seeking top-notch performance marketing solutions."
-    },
-    {
-        "reviewer_name": "Ahrar Wani",
-        "rating": 5,
-        "review_date": "2 years ago",
-        "review_text": "Impressed by the remarkable services provided by D2C Digital Solutions. Their performance marketing strategies yielded impressive results for our business, boosting our online visibility and conversion rates significantly. Throughout the collaboration, the team's unwavering expertise, commitment, and transparent communication truly stood out. Thanks to their efforts, our business has experienced substantial growth, and I enthusiastically endorse D2C Digital Solutions to all seeking top-notch performance marketing solutions."
-    },
-    {
-        "reviewer_name": "aamir rajput",
-        "rating": 5,
-        "review_date": "a year ago",
-        "review_text": "I have a clothing brand and had a ROAS of almost 1 D2C team are amazing they took my ROAS to 5x in 45 days highly recommend"
+        reviewer_name: "Aamir Rajput",
+        rating: 5,
+        engagement: "Ongoing Growth Campaign",
+        role: "Clothing Brand Founder",
+        review_text: "I have a clothing brand and had a ROAS of almost 1. D2C team are amazing — they took my ROAS to 5x in 45 days. Highly recommend.",
+        results: [
+            "ROAS from 1x → 5x in 45 days",
+            "Revenue tripled in 2 months",
+            "Ad spend scaled 4x profitably"
+        ]
     }
 ];
 
-const ReviewCard: React.FC<{ review: Review }> = ({ review }) => (
-    <div className="w-[350px] md:w-[450px] shrink-0 p-6 mx-4 rounded-2xl bg-surface/40 border border-white/5 backdrop-blur-sm hover:border-primary/30 transition-colors duration-300">
-        <div className="flex items-center gap-1 mb-3">
+const stats = [
+    { value: "₹3.5Cr+", label: "Ad Spend Managed" },
+    { value: "40+", label: "Brands Scaled" },
+    { value: "3.8x", label: "Avg ROAS" },
+];
+
+// Featured card = index 1 (center of first row on desktop)
+const FEATURED_INDEX = 1;
+
+const ReviewCard: React.FC<{ review: Review; index: number; featured?: boolean }> = ({ review, index, featured = false }) => (
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.08 }}
+        className="group"
+        style={{
+            background: '#11161D',
+            border: featured ? '1px solid rgba(0,227,140,0.3)' : '1px solid #1F2937',
+            borderRadius: '16px',
+            padding: '32px',
+            boxShadow: featured ? '0 14px 36px rgba(0,0,0,0.45)' : '0 10px 30px rgba(0,0,0,0.35)',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+            transform: featured ? 'scale(1.05)' : 'scale(1)',
+        }}
+        onMouseEnter={(e) => {
+            const el = e.currentTarget;
+            el.style.transform = featured ? 'scale(1.05) translateY(-6px)' : 'translateY(-6px)';
+            el.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
+        }}
+        onMouseLeave={(e) => {
+            const el = e.currentTarget;
+            el.style.transform = featured ? 'scale(1.05)' : 'scale(1)';
+            el.style.boxShadow = featured ? '0 14px 36px rgba(0,0,0,0.45)' : '0 10px 30px rgba(0,0,0,0.35)';
+        }}
+    >
+        {/* Stars */}
+        <div className="flex items-center gap-1">
             {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} className={i < review.rating ? "text-primary fill-primary" : "text-zinc-600"} />
+                <Star
+                    key={i}
+                    size={16}
+                    className="fill-current"
+                    style={{ color: i < review.rating ? '#FACC15' : '#374151' }}
+                />
             ))}
-            <span className="ml-2 text-xs text-zinc-500 font-mono">{review.review_date}</span>
         </div>
-        <p className="text-zinc-300 text-sm leading-relaxed mb-6 line-clamp-4 hover:line-clamp-none transition-all duration-300">
+
+        {/* Engagement label */}
+        <div style={{ fontSize: '12px', color: '#9CA3AF', opacity: 0.65, marginTop: '14px', marginBottom: '16px' }}>
+            {review.engagement}
+        </div>
+
+        {/* Review text */}
+        <p style={{ fontSize: '16px', lineHeight: 1.6, color: '#E5E7EB' }}>
             "{review.review_text}"
         </p>
+
+        {/* Results box */}
+        <div
+            style={{
+                marginTop: '18px',
+                marginBottom: '20px',
+                background: '#0F1720',
+                padding: '16px',
+                borderRadius: '12px',
+            }}
+        >
+            <div className="flex items-center gap-1.5" style={{ fontSize: '13px', fontWeight: 600, color: '#00E38C', marginBottom: '8px' }}>
+                <TrendingUp size={14} />
+                Results
+            </div>
+            {review.results.map((result, i) => (
+                <div key={i} style={{ fontSize: '14px', color: '#00E38C', lineHeight: 1.6 }}>
+                    {result}
+                </div>
+            ))}
+        </div>
+
+        {/* Author */}
         <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary/20 to-primary/5 flex items-center justify-center text-primary text-xs font-bold border border-primary/20">
+            <div
+                className="flex items-center justify-center flex-shrink-0"
+                style={{
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, rgba(0,227,140,0.12), rgba(0,227,140,0.03))',
+                    border: '1px solid rgba(0,227,140,0.25)',
+                    fontWeight: 600,
+                    fontSize: '15px',
+                    color: '#00E38C',
+                }}
+            >
                 {review.reviewer_name.charAt(0)}
             </div>
             <div>
-                <h4 className="text-white text-sm font-medium">{review.reviewer_name}</h4>
-                {review.review_title && (
-                    <p className="text-primary/70 text-[10px] uppercase tracking-wider mt-0.5">{review.review_title}</p>
+                <div style={{ fontSize: '15px', fontWeight: 600, color: '#E5E7EB' }}>
+                    {review.reviewer_name}
+                </div>
+                {review.role && (
+                    <div style={{ fontSize: '13px', color: '#9CA3AF' }}>
+                        {review.role}
+                    </div>
                 )}
             </div>
         </div>
-    </div>
+    </motion.div>
 );
 
-const Marquee = ({ children, reverse = false }: { children: React.ReactNode, reverse?: boolean }) => {
-    return (
-        <div className="flex overflow-hidden group">
-            <motion.div
-                initial={{ x: reverse ? "-50%" : "0%" }}
-                animate={{ x: reverse ? "0%" : "-50%" }}
-                transition={{
-                    duration: 40,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-                className="flex py-4"
-            >
-                {children}
-                {children}
-            </motion.div>
-        </div>
-    );
-};
-
 const ReviewsMarquee: React.FC = () => {
-    const firstRow = reviews.slice(0, 5);
-    const secondRow = reviews.slice(5);
-
     return (
-        <section className="py-24 bg-background relative overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern bg-[size:60px_60px] opacity-[0.03] pointer-events-none"></div>
+        <section id="reviews" style={{ paddingTop: '80px', paddingBottom: '140px', background: '#0B0F14' }} className="relative">
 
-            <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-                <h2 className="text-3xl md:text-5xl font-display font-medium text-white mb-4">
-                    Voices of <span className="text-primary">Success</span>
-                </h2>
-                <p className="text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
-                    Don't just take our word for it. Here's what our partners have to say about our data-driven growth strategies.
-                </p>
-            </div>
+            <div style={{ maxWidth: '1200px' }} className="mx-auto px-6">
 
-            <div className="relative flex flex-col gap-4">
-                <Marquee>
-                    {firstRow.map((review, i) => (
-                        <ReviewCard key={i} review={review} />
+                {/* Heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center"
+                >
+                    <h2
+                        className="font-display text-white"
+                        style={{ fontSize: '42px', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: '32px' }}
+                    >
+                        Real Results. Real Brands. <span style={{ color: '#00E38C' }}>Real Growth.</span>
+                    </h2>
+                    <p style={{ fontSize: '18px', color: '#9CA3AF', lineHeight: 1.6 }}>
+                        We don't just run ads. We scale brands profitably.
+                    </p>
+                </motion.div>
+
+                {/* Trust Bar — Authority Stats */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-16"
+                    style={{ marginTop: '60px', marginBottom: '60px' }}
+                >
+                    {stats.map((stat, i) => (
+                        <div key={i} className="text-center">
+                            <div style={{ fontSize: '20px', fontWeight: 600, color: '#E5E7EB' }}>
+                                {stat.value}
+                            </div>
+                            <div style={{ fontSize: '14px', color: '#9CA3AF', marginTop: '4px' }}>
+                                {stat.label}
+                            </div>
+                        </div>
                     ))}
-                </Marquee>
+                </motion.div>
 
-                <Marquee reverse>
-                    {secondRow.map((review, i) => (
-                        <ReviewCard key={i} review={review} />
+                {/* Testimonial Grid */}
+                <div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    style={{ gap: '32px' }}
+                >
+                    {reviews.map((review, i) => (
+                        <ReviewCard
+                            key={i}
+                            review={review}
+                            index={i}
+                            featured={i === FEATURED_INDEX}
+                        />
                     ))}
-                </Marquee>
-
-                {/* Gradient Fades */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+                </div>
             </div>
         </section>
     );

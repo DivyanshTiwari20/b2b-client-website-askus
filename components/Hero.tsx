@@ -4,7 +4,7 @@ import { ArrowRight, ChevronRight, BarChart3, Target, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center pt-12 pb-20 md:pt-16 md:pb-24 overflow-hidden">
+    <section id="home" className="relative flex flex-col items-center justify-center pt-12 pb-0 md:pt-16 md:pb-0 overflow-hidden">
 
       <div className="max-w-[88rem] mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
 
@@ -37,13 +37,12 @@ const Hero: React.FC = () => {
           <div className="flex justify-center w-full px-4">
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary text-white px-6 py-3 rounded-lg font-extrabold hover:bg-primary-dark transition-all text-xl md:text-2xl tracking-wide border-2 border-white"
-              style={{ boxShadow: '1px 3px 0 rgba(255, 255, 255, 1)' }}
+              className="bg-primary text-black px-10 py-4 rounded-xl font-bold hover:bg-primary-dark transition-all text-lg md:text-xl tracking-wide"
             >
               Book Your FREE Call Now
             </button>
           </div>
-          <div className="relative w-full max-w-5xl mx-auto mt-12 mb-16 md:mt-16 md:mb-24">
+          <div className="relative w-full max-w-5xl mx-auto mt-12 mb-0 md:mt-16 md:mb-0">
             {/* Schematic Diagram "The V Model" aesthetic */}
             <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-16 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
