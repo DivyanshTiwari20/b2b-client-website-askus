@@ -59,7 +59,7 @@ const DashboardShowcase: React.FC = () => {
         : showcaseItems.filter(item => item.category === activeTab);
 
     return (
-        <section className="py-24 bg-background relative" id="reviews">
+        <section className="py-12 bg-background relative" id="reviews">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     className="text-center mb-16"

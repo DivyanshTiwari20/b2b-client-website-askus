@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="pt-10 md:pt-16 pb-24 md:pb-40 relative overflow-hidden" style={{ background: '#F5F5F5', color: '#111827' }}>
+    <section id="about" className="pt-5 md:pt-8 pb-12 md:pb-20 relative overflow-hidden" style={{ background: '#F5F5F5', color: '#111827' }}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
 

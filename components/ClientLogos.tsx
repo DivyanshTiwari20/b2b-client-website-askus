@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ClientLogos: React.FC = () => {
     return (
-        <section className="py-12 md:py-20 relative overflow-hidden">
+        <section className="py-6 md:py-10 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -23,6 +23,13 @@ const ClientLogos: React.FC = () => {
                             className="max-w-full h-auto opacity-70  transition-all duration-700"
                         />
                     </div>
+                    {/* <div className="w-full flex justify-center mt-12">
+                        <img
+                            src="/logo-clients/image.png"
+                            alt="Client Logos"
+                            className="max-w-full h-auto opacity-100 rounded-xl transition-all duration-700"
+                        />
+                    </div> */}
                 </motion.div>
             </div>
         </section>

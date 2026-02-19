@@ -19,7 +19,7 @@ const fadeUp = {
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center pt-12 pb-16 md:pt-16 md:pb-24 overflow-hidden">
+    <section id="home" className="relative flex flex-col items-center justify-center pt-6 pb-8 md:pt-8 md:pb-12 overflow-hidden">
 
       {/* Subtle floating background gradient */}
       <motion.div

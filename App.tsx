@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import ClientLogos from './components/ClientLogos';
 import ReviewsMarquee from './components/ReviewsMarquee';
 import DashboardShowcase from './components/DashboardShowcase';
+import Roadmap from './components/Roadmap';
 
 
 const App: React.FC = () => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
         <Hero />
         <ReviewsMarquee />
         <ClientLogos />
+        <Roadmap />
         <About />
 
         {/* <Stats /> */}

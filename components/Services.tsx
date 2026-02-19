@@ -35,7 +35,7 @@ const services = [
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="relative" style={{ paddingTop: '120px', paddingBottom: '120px', background: '#ffffff', color: '#111827' }}>
+    <section id="services" className="relative" style={{ paddingTop: '60px', paddingBottom: '60px', background: '#ffffff', color: '#111827' }}>
 
       <div className="max-w-7xl mx-auto px-6">
 

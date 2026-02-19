@@ -200,7 +200,7 @@ const ReviewCard: React.FC<{ review: Review; index: number; featured?: boolean }
 
 const ReviewsMarquee: React.FC = () => {
     return (
-        <section id="reviews" style={{ paddingTop: '80px', paddingBottom: '140px', background: '#ffffff', color: '#111827' }} className="relative">
+        <section id="reviews" style={{ paddingTop: '40px', paddingBottom: '70px', background: '#ffffff', color: '#111827' }} className="relative">
 
             <div style={{ maxWidth: '1200px' }} className="mx-auto px-6">
 
