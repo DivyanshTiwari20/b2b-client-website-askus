@@ -18,9 +18,9 @@ const ClientLogos: React.FC = () => {
 
                     <div className="w-full flex justify-center">
                         <img
-                            src="/logo-clients/logos.png"
+                            src="/logos.jpeg"
                             alt="Client Logos"
-                            className="max-w-full h-auto opacity-70 grayscale hover:grayscale-0 transition-all duration-700"
+                            className="max-w-full h-auto opacity-70  transition-all duration-700"
                         />
                     </div>
                 </motion.div>

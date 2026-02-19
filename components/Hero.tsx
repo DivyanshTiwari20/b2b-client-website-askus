@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight, BarChart3, Target, Zap } from 'lucide-react';
 import CTAButton from './CTAButton';
-
+import ProcessSteps from './ProcessSteps';
+import { FancyText } from '@scrollxui/fancy-text';
 const stagger = {
   hidden: {},
   show: {
@@ -47,7 +47,14 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] md:leading-[1.15] mb-6 md:mb-8 text-white max-w-6xl mx-auto">
-            Empower your brand with <span className="text-primary">Data-Driven Ads</span> that transform your marketing <span className="text-zinc-500">strategy</span> into <span className="text-primary">measurable scale !</span>
+            Empower your brand with <span className="text-primary">Data-Driven Ads</span> that transform your marketing <FancyText
+              key={key}
+              className='text-5xl font-black leading-none text-black/10 dark:text-white/10'
+              fillClassName='text-black dark:text-white'
+              stagger={0.06}
+              duration={1.2}
+              delay={0.2}
+            >strategy</FancyText> into <span className="text-primary">measurable scale !</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-base md:text-lg text-zinc-400 max-w-5xl mx-auto mb-8 md:mb-10 leading-relaxed">
@@ -72,54 +79,7 @@ const Hero: React.FC = () => {
             </CTAButton>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            className="relative w-full max-w-5xl mx-auto mt-12 mb-0 md:mt-16 md:mb-0"
-          >
-            {/* Schematic Diagram */}
-            <div className="border border-white/10 bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-16 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
-
-              <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-10 relative z-10">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center gap-4 md:gap-6 group cursor-pointer relative">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-white/10 bg-black/40 flex items-center justify-center group-hover:border-primary/50 transition-colors duration-300 z-10 relative bg-surface">
-                    <Target className="text-zinc-400 group-hover:text-primary transition-colors duration-300" size={28} />
-                  </div>
-                  <div className="text-base md:text-lg font-mono text-zinc-400 group-hover:text-white transition-colors duration-300">1. Strategy</div>
-                  <div className="md:hidden h-8 w-px bg-white/10 absolute -bottom-8 left-1/2 -translate-x-1/2"></div>
-                </div>
-
-                {/* Connector */}
-                <div className="hidden md:block h-px w-24 bg-gradient-to-r from-white/10 via-primary/50 to-white/10 relative">
-                  <div className="absolute right-0 -top-1 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_12px_#00E38C]"></div>
-                </div>
-
-                {/* Step 2 */}
-                <div className="flex flex-col items-center gap-4 md:gap-6 relative mt-4 md:mt-0">
-                  <div className="absolute -inset-6 bg-primary/10 blur-xl rounded-full"></div>
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-primary bg-surface flex items-center justify-center shadow-[0_0_40px_rgba(0,227,140,0.15)] z-10 relative">
-                    <Zap className="text-primary fill-primary/20" size={32} />
-                  </div>
-                  <div className="text-lg md:text-xl font-bold font-display text-white">2. Execution</div>
-                  <div className="md:hidden h-8 w-px bg-white/10 absolute -bottom-8 left-1/2 -translate-x-1/2"></div>
-                </div>
-
-                {/* Connector */}
-                <div className="hidden md:block h-px w-24 bg-gradient-to-r from-white/10 via-primary/50 to-white/10"></div>
-
-                {/* Step 3 */}
-                <div className="flex flex-col items-center gap-4 md:gap-6 group cursor-pointer mt-4 md:mt-0">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-white/10 bg-black/40 flex items-center justify-center group-hover:border-primary/50 transition-colors duration-300 z-10 relative bg-surface">
-                    <BarChart3 className="text-zinc-400 group-hover:text-primary transition-colors duration-300" size={28} />
-                  </div>
-                  <div className="text-base md:text-lg font-mono text-zinc-400 group-hover:text-white transition-colors duration-300">3. Scaling</div>
-                </div>
-              </div>
-
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
-            </div>
-          </motion.div>
+          <ProcessSteps />
 
         </motion.div>
       </div>

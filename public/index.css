@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════════════
+   ProcessSteps — Premium Process Section Styles
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Container ── */
+.process-container {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* ── Hero card pulsing glow ── */
+.process-hero-glow {
+  background: radial-gradient(ellipse 80% 60% at 50% 50%,
+      rgba(0, 227, 140, 0.08) 0%,
+      transparent 70%);
+  animation: hero-pulse 3s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ── Hero icon container ── */
+.process-icon--hero {
+  border: 1px solid rgba(0, 227, 140, 0.35);
+  background: rgba(0, 227, 140, 0.06);
+}
+
+/* ── Cards hover shadow ── */
+.process-card:hover {
+  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.process-card--hero:hover {
+  box-shadow: 0 16px 48px -8px rgba(0, 227, 140, 0.12),
+    0 0 0 1px rgba(0, 227, 140, 0.2);
+}
+
+/* ── Traveling dot ── */
+.process-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00e38c;
+  box-shadow: 0 0 10px rgba(0, 227, 140, 0.5),
+    0 0 20px rgba(0, 227, 140, 0.25);
+  animation: travel-dot 4.5s linear infinite;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes travel-dot {
+  0% {
+    left: 10%;
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 90%;
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RetroGrid — Animated Perspective Grid
+   ═══════════════════════════════════════════════════════ */
+
+.retro-grid-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  perspective: 200px;
+}
+
+.retro-grid-inner {
+  position: absolute;
+  inset: 0;
+  top: 0;
+  transform-style: preserve-3d;
+}
+
+.retro-grid-inner::before {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  right: -50%;
+  height: 200%;
+  background-image:
+    linear-gradient(to right, var(--line-color, #00E38C) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line-color, #00E38C) 1px, transparent 1px);
+  background-size: var(--cell-size, 60px) var(--cell-size, 60px);
+  background-repeat: repeat;
+  opacity: var(--grid-opacity, 0.5);
+  transform: rotateX(var(--grid-angle, 65deg));
+  transform-origin: center center;
+  animation: retro-grid-scroll 12s linear infinite;
+}
+
+.retro-grid-inner::after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  right: -50%;
+  height: 200%;
+  background-image:
+    linear-gradient(to right, var(--line-color, #00E38C) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line-color, #00E38C) 1px, transparent 1px);
+  background-size: var(--cell-size, 60px) var(--cell-size, 60px);
+  background-repeat: repeat;
+  opacity: var(--grid-opacity, 0.5);
+  transform: rotateX(var(--grid-angle, 65deg));
+  transform-origin: center center;
+  animation: retro-grid-scroll 12s linear infinite;
+  animation-delay: -6s;
+}
+
+@keyframes retro-grid-scroll {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 var(--cell-size, 60px);
+  }
+}

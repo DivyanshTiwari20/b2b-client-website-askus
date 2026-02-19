@@ -30,11 +30,11 @@ const App: React.FC = () => {
         <Hero />
         <ReviewsMarquee />
         <ClientLogos />
+        <About />
+
+        {/* <Stats /> */}
         <DashboardShowcase />
         <Services />
-
-        <Stats />
-        <About />
         {/* <Testimonials /> */}
         {/* <Contact /> */}
 
