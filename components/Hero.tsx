@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
 import ProcessSteps from './ProcessSteps';
-import { FancyText } from '@scrollxui/fancy-text';
+
 const stagger = {
   hidden: {},
   show: {
@@ -47,14 +47,7 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.h1 variants={fadeUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-extrabold tracking-tight leading-[1.15] md:leading-[1.15] mb-6 md:mb-8 text-white max-w-6xl mx-auto">
-            Empower your brand with <span className="text-primary">Data-Driven Ads</span> that transform your marketing <FancyText
-              key={key}
-              className='text-5xl font-black leading-none text-black/10 dark:text-white/10'
-              fillClassName='text-black dark:text-white'
-              stagger={0.06}
-              duration={1.2}
-              delay={0.2}
-            >strategy</FancyText> into <span className="text-primary">measurable scale !</span>
+            Empower your brand with <span className="text-primary">Data-Driven Ads</span> that transform your marketing <span className="text-zinc-500">strategy</span> into <span className="text-primary">measurable scale !</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-base md:text-lg text-zinc-400 max-w-5xl mx-auto mb-8 md:mb-10 leading-relaxed">
