@@ -157,12 +157,12 @@ const Footer: React.FC = () => {
             D2C<span className="text-primary text-glow">.</span>
           </div>
 
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-10 text-xs md:text-sm font-mono uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.55)' }}>
+          {/* <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-10 text-xs md:text-sm font-mono uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.55)' }}>
             <a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a>
             <a href="#" className="hover:text-primary transition-colors duration-300">Refunds</a>
             <a href="#" className="hover:text-primary transition-colors duration-300">Pricing</a>
             <a href="#" className="hover:text-primary transition-colors duration-300">Terms</a>
-          </div>
+          </div> */}
 
           <div className="text-xs md:text-sm font-mono" style={{ color: 'rgba(255,255,255,0.35)' }}>
             © {new Date().getFullYear()} D2C Digital Solutions.
