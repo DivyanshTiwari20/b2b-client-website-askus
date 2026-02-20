@@ -148,3 +148,48 @@
     background-position: 0 var(--cell-size, 60px);
   }
 }
+
+/* ═══════════════════════════════════════════════════════
+   BrandMarquee — Infinite Logo Scroll
+   ═══════════════════════════════════════════════════════ */
+
+.brand-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.brand-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+}
+
+.brand-marquee-left {
+  animation: marquee-scroll-left 30s linear infinite;
+}
+
+.brand-marquee-right {
+  animation: marquee-scroll-right 35s linear infinite;
+}
+
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

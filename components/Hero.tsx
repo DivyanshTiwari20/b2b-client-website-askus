@@ -63,14 +63,20 @@ const Hero: React.FC = () => {
             ))}
           </motion.div>
 
-          <motion.div variants={fadeUp} className="flex justify-center w-full px-4">
+          {/* <motion.div variants={fadeUp} className="flex justify-center w-full px-4">
             <CTAButton
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-10 py-4 text-lg md:text-xl tracking-wide"
             >
               Book Your <span className="text-white font-extrabold">FREE</span> Call Now
             </CTAButton>
-          </motion.div>
+          </motion.div> */}
+          <button
+            // onClick={() => scrollToSection('contact')}
+            className="bg-primary hover:bg-primary-dark text-black px-8 py-3 rounded-full font-bold text-base transition-all duration-300 shadow-[0_0_15px_rgba(0,227,140,0.3)] hover:shadow-[0_0_25px_rgba(0,227,140,0.5)] hover:-translate-y-0.5 hover:brightness-110"
+          >
+            Book Strategy Call
+          </button>
 
           <ProcessSteps />
 

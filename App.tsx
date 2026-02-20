@@ -13,6 +13,7 @@ import DashboardShowcase from './components/DashboardShowcase';
 import Roadmap from './components/Roadmap';
 import PartnerFilter from './components/PartnerFilter';
 import WhyChooseUs from './components/WhyChooseUs';
+import BrandMarquee from './components/BrandMarquee';
 
 
 const App: React.FC = () => {
@@ -38,6 +39,7 @@ const App: React.FC = () => {
 
         {/* <Stats /> */}
         <DashboardShowcase />
+        <BrandMarquee />
         <Services />
         <PartnerFilter />
         <WhyChooseUs />
