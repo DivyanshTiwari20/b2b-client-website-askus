@@ -11,6 +11,8 @@ import ClientLogos from './components/ClientLogos';
 import ReviewsMarquee from './components/ReviewsMarquee';
 import DashboardShowcase from './components/DashboardShowcase';
 import Roadmap from './components/Roadmap';
+import PartnerFilter from './components/PartnerFilter';
+import WhyChooseUs from './components/WhyChooseUs';
 
 
 const App: React.FC = () => {
@@ -26,7 +28,7 @@ const App: React.FC = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-900 rounded-full opacity-20 blur-[120px]"></div>
       </div>
 
-      {/* <Navbar /> */}
+      <Navbar />
       <main className="relative z-10">
         <Hero />
         <ReviewsMarquee />
@@ -37,6 +39,8 @@ const App: React.FC = () => {
         {/* <Stats /> */}
         <DashboardShowcase />
         <Services />
+        <PartnerFilter />
+        <WhyChooseUs />
         {/* <Testimonials /> */}
         {/* <Contact /> */}
 

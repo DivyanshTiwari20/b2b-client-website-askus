@@ -9,7 +9,7 @@ const steps = [
         label: '1. Strategy',
         title: 'Research & Plan',
         icon: Crosshair,
-        isHero: false,
+        isHero: true,
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const steps = [
         label: '3. Scaling',
         title: 'Grow & Dominate',
         icon: TrendingUp,
-        isHero: false,
+        isHero: true,
     },
 ];
 
@@ -153,8 +153,8 @@ const ProcessSteps: React.FC = () => {
                                             )}
                                             <Icon
                                                 className={`relative z-10 transition-colors duration-300 ${isHero
-                                                        ? 'text-primary'
-                                                        : 'text-zinc-400 group-hover:text-white'
+                                                    ? 'text-primary'
+                                                    : 'text-zinc-400 group-hover:text-white'
                                                     }`}
                                                 size={isHero ? 30 : 26}
                                                 strokeWidth={1.6}

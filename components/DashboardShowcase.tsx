@@ -123,7 +123,8 @@ const DashboardShowcase: React.FC = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.5, ease: 'easeOut' }}
-                                className="group relative bg-surface/40 border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-primary/40"
+                                className="group relative bg-surface/40 border border-white/5 rounded-2xl overflow-hidden transition-colors duration-300 hover:border-primary/40 cursor-pointer"
+                                onClick={() => setSelectedImage(item.image)}
                             >
                                 <div className="aspect-video relative overflow-hidden">
                                     <img
@@ -131,23 +132,11 @@ const DashboardShowcase: React.FC = () => {
                                         alt={item.title}
                                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                                     />
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                        <button
-                                            onClick={() => setSelectedImage(item.image)}
-                                            className="p-3 bg-primary text-black rounded-full transition-transform duration-300 hover:-translate-y-0.5"
-                                        >
+                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <div className="p-3 bg-primary text-black rounded-full">
                                             <ZoomIn size={20} />
-                                        </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="p-5 border-t border-white/5 flex items-center justify-between">
-                                    <div>
-                                        <span className="text-[10px] uppercase tracking-wider text-primary/70 font-mono">
-                                            {item.category.replace('-', ' ')}
-                                        </span>
-                                        <h4 className="text-sm font-semibold mt-1" style={{ color: '#F5F7FA' }}>{item.title}</h4>
-                                    </div>
-                                    <ExternalLink size={16} className="text-zinc-600 group-hover:text-primary transition-colors duration-300" />
                                 </div>
                             </motion.div>
                         ))}

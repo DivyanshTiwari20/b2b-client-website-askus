@@ -234,7 +234,7 @@ const ReviewsMarquee: React.FC = () => {
                 >
                     {stats.map((stat, i) => (
                         <div key={i} className="text-center">
-                            <div style={{ fontSize: '28px', fontWeight: 700, color: '#111827' }}>
+                            <div style={{ fontSize: '58px', fontWeight: 700, color: '#111827' }}>
                                 {stat.value}
                             </div>
                             <div style={{ fontSize: '14px', color: '#6B7280', marginTop: '4px' }}>

@@ -49,11 +49,11 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-2">
-          <div className="flex items-center bg-white/5 rounded-full px-6 py-2 border border-white/5 mr-6 backdrop-blur-sm">
+          {/* <div className="flex items-center bg-white/5 rounded-full px-6 py-2 border border-white/5 mr-6 backdrop-blur-sm">
             <button onClick={() => scrollToSection('services')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.65)' }}>Services</button>
             <button onClick={() => scrollToSection('about')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.65)' }}>About</button>
-            <button onClick={() => scrollToSection('reviews')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.65)' }}>Reviews</button>
-          </div>
+            <button onClick={() => scrollToSection('reviews')} className="px-5 py-1 text-base font-semibold hover:text-primary transition-colors duration-300" style={{ color: 'rgba(255,255,255,0.65)' }}>Reviews</button> */}
+          {/* </div> */}
 
           <button
             onClick={() => scrollToSection('contact')}
@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </motion.nav >
   );
 };
 
