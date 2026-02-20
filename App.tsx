@@ -32,14 +32,14 @@ const App: React.FC = () => {
       <Navbar />
       <main className="relative z-10">
         <Hero />
+        {/* <ClientLogos /> */}
+        <BrandMarquee />
         <ReviewsMarquee />
-        <ClientLogos />
         <Roadmap />
         <About />
 
         {/* <Stats /> */}
         <DashboardShowcase />
-        <BrandMarquee />
         <Services />
         <PartnerFilter />
         <WhyChooseUs />
